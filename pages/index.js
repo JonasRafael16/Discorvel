@@ -1,5 +1,8 @@
 import {Box, Button, Text, TextField, Image} from '@skynexui/components';
+import Bground from '../assets/images/background-marvel1.jpg';
+
 import appConfig from '../config.json';
+
 
 function GlobalStyle() {
     return (
@@ -11,7 +14,7 @@ function GlobalStyle() {
         list-style: none;
       }
       body {
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Marvel';
       }
       /* App fit Height */ 
       html, body, #__next {
@@ -52,23 +55,6 @@ function Title(arg1) {
     )
 }
 
-
-
-// function HomePage() {
-//     // JSX
-//     return (
-//         <div>
-//             <GlobalStyle />
-//             <Title tag="h2">Bem vindo </Title>
-
-           
-//         </div>
-
-//     )
-// }
-
-// export default HomePage
-
 export default function PaginaInicial() {
   const username = 'peas';
 
@@ -79,7 +65,8 @@ export default function PaginaInicial() {
         styleSheet={{
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           backgroundColor: appConfig.theme.colors.primary[500],
-          backgroundImage: 'url(https://virtualbackgrounds.site/wp-content/uploads/2020/08/the-matrix-digital-rain.jpg)',
+          backgroundImage: 'url(https://images7.alphacoders.com/102/1027449.jpg)',
+          // backgroundImage: `url(${Bground})`,
           backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
         }}
       >
