@@ -1,11 +1,45 @@
+import appConfig from '../config.json';
+
+function GlobalStyle() {
+    return (
+      <style global jsx>{`
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+      }
+      body {
+        font-family: 'Open Sans', sans-serif;
+      }
+      /* App fit Height */ 
+      html, body, #__next {
+        min-height: 100vh;
+        display: flex;
+        flex: 1;
+      }
+      #__next {
+        flex: 1;
+      }
+      #__next > * {
+        flex: 1;
+      }
+      /* ./App fit Height */ 
+    `}</style>
+    );
+  }
+
+
+
 function Title(arg1, arg2) {
     console.log(arg1.children);
+    var Tag = arg1.tag;
     return (
         <>
-            <h1>{arg1.children}</h1>
+            <Tag>{arg1.children}</Tag>
             <style jsx>{`
-            h1 {
-                color: red;
+            ${Tag} {
+                color: ${appConfig.theme.colors.neutrals['000']};
                 background-color: #000;
                 padding: 20px;
                 border-radius: 5px;
@@ -19,14 +53,12 @@ function Title(arg1, arg2) {
 
 
 
-
-
 function HomePage() {
     // JSX
     return (
         <div>
-            <Title>Bem vindo </Title>
-
+            <GlobalStyle />
+            <Title tag="h2">Bem vindo </Title>
 
            
         </div>
